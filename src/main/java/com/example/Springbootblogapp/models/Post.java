@@ -21,6 +21,7 @@ public class Post {
     @Column(columnDefinition = "TEXT")
     private String body;
 
+
     private LocalDateTime createdAt;
 
     // many posts to one account
@@ -28,4 +29,6 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false)
     private Account account;
+
+
 }

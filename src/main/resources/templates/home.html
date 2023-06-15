@@ -10,6 +10,9 @@
     <div class="container">
         <h1>Spring Boot Blog App Project</h1>
         <hr/>
+        <ul>
+            <li><a th:href="@{/posts/new}">Create a New Post</a></li>
+        </ul>
         <div class="posts-container">
             <div class="post" th:each="post : ${posts}">
                 <h2><a th:href="@{'/posts/'+ ${post.id}}"
@@ -18,7 +21,7 @@
                 </a>
                 </h2>
                 <h5 th:text="'Written By ' + ${post.account.firstName}"> Account FirstName</h5>
-                <h5 th:text="'Published on ' + ${post.createdAt}">
+                <h5 th:text="'Published on ' + ${#temporals.format(post.createdAt, 'dd MM yyyy: HH:mm')}">
                     PUBLISHED AT 'TIME'
                 </h5>
                 <p th:text="${post.body}">

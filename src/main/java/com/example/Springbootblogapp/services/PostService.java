@@ -22,7 +22,9 @@ public class PostService {
 
     //List all posts
     public List<Post> getAll() {
-        return postRepo.findAll();
+
+
+       return postRepo.findAll();
     }
 
     public Post save(Post savedPost){
