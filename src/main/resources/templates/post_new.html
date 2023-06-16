@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <a th:href="@{/}"></a>
+        <a th:href="@{/}">Home</a>
         <form action="#" th:action="@{'/posts/new'}" th:object="${post}" method="post">
             <input type="hidden" th:field="*{account}"/>
             <input type="hidden" th:field="*{createdAt}"/>

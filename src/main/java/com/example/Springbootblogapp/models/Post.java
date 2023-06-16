@@ -24,6 +24,8 @@ public class Post {
 
     private LocalDateTime createdAt;
 
+    private LocalDateTime updatedAt;
+
     // many posts to one account
     @NotNull
     @ManyToOne
