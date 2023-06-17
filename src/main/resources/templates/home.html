@@ -28,7 +28,7 @@
                 <h3 th:text="'Last updated on ' + ${#temporals.format(post.updatedAt, 'dd MM yyyy: HH:mm')}">
                     UPDATED AT 'TIME'
                 </h3>
-                <p th:text="${post.body}">
+                <p th:text="${#strings.length(post.body) > 100 ? #strings.substring(post.body, 0, 100) + '...' : post.body}">
                     POST BODY
                 </p>
                 <br/>

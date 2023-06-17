@@ -1,6 +1,7 @@
 package com.example.Springbootblogapp.controllers;
 
 import com.example.Springbootblogapp.models.Account;
+import com.example.Springbootblogapp.repositories.AuthorityRepository;
 import com.example.Springbootblogapp.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,9 @@ public class RegisterController {
     @Autowired
     private AccountService accountService;
 
+    @Autowired
+    private AuthorityRepository authorityRepository;
+
     @GetMapping("/register")
     public String getRegisterPage(Model model) {
         Account newAccount = new Account();
@@ -24,7 +28,9 @@ public class RegisterController {
 
     @PostMapping("/register")
     public String registerNewUser(@ModelAttribute Account newAccount){
+
         accountService.saveAccount(newAccount);
+
 
         return "redirect:/";
     }
